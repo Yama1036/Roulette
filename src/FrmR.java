@@ -263,10 +263,11 @@ public class FrmR extends javax.swing.JFrame {
                             .addComponent(jLabel12)
                             .addComponent(txtRed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cmbEven, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13)
-                            .addComponent(txtEven, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel13)
+                                .addComponent(txtEven, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
@@ -293,9 +294,94 @@ public class FrmR extends javax.swing.JFrame {
     }//GEN-LAST:event_txtStreetActionPerformed
     
     private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartActionPerformed
+        //get the number/value that user pick to bet.
+        int numA = cmbStraight.getSelectedIndex();
+        
+        Object nume = cmbStreet.getSelectedItem();
+        String numE = nume.toString();
+        
+        int numL = cmbLow.getSelectedIndex();
+        
+        int numR = cmbRed.getSelectedIndex();
+        
+        int numO = cmbEven.getSelectedIndex();
+
+        
+        //get how much does user bet in each spot and amount of money.
+        int straight = Integer.parseInt(txtStraight.getText());
+        
+        int street = Integer.parseInt(txtStreet.getText());
+        
+        int low = Integer.parseInt(txtLow.getText());
+        
+        int red = Integer.parseInt(txtRed.getText());
+        
+        int even = Integer.parseInt(txtEven.getText());
+        
+        int money = Integer.parseInt(lblYmoney.getText());
+        
+        //Create the Array of Red and Black numbers.(Red = Odd . Black = Even)
+        int [] evennum = new int [13];
+        evennum[1] = 2;
+        evennum[2] = 4;
+        
+        int [] oddnum = new int [13];
+        oddnum[1] = 1;
+        oddnum[2] = 3;
         
         
+        //Define Street.
+        int num1 = 0;
+        int num2 = 0;
+        int num3 = 0;
         
+        if (numE == "1-2-3")
+        {
+            num1 = 1;
+            num2 = 2;
+            num3 = 3;
+        }
+        
+        if (numE == "4-5-6")
+        {
+            num1 = 4;
+            num2 = 5;
+            num3 = 6;
+        }
+        
+       
+        
+        
+        //find out the what number is hit.
+        Random rand = new Random();
+        int hit = rand.nextInt(36);
+        lblhit.setText(""+ hit +"");
+        
+        //money that you get by win of Straight
+        if (hit == numA)
+        {
+            money = money + (straight * 36);
+            lblYmoney.setText(""+ money +"");
+        }
+        
+        //money that you get from win of Street
+        if (hit == num1)
+        {
+            money = money + (street * 18);
+            lblYmoney.setText(""+ money +"");
+        }
+        
+        if (hit == num2)
+        {
+            money = money + (street * 18);
+            lblYmoney.setText(""+ money +"");
+        }
+        
+        if (hit == num3)
+        {
+            money = money + (street * 18);
+            lblYmoney.setText(""+ money +"");
+        }
         
         
         
