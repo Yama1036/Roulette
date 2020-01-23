@@ -5,6 +5,7 @@
  */
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
@@ -313,7 +314,8 @@ public class FrmR extends javax.swing.JFrame {
         Object numl = cmbLow.getSelectedItem();
         String numL = numl.toString();
         
-        int numR = cmbRed.getSelectedIndex();
+        Object numr = cmbRed.getSelectedItem();
+        String numR = numr.toString();
         
         int numO = cmbEven.getSelectedIndex();
 
@@ -442,6 +444,16 @@ public class FrmR extends javax.swing.JFrame {
         
         
         //money that user get from Red/Black
+         if(Arrays.asList(listEven).contains(hit)) {
+            if (numR == "Red")
+            {
+                
+            }
+            
+            
+        }
+        
+        
         if (hit == listEven)
         {
             
