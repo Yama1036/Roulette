@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+import java.awt.Color;
 
 /**
  *
@@ -412,10 +413,21 @@ public class FrmR extends javax.swing.JFrame {
        
         
         
-        //find out the what number is hit.
+        //find out the what number is hit, if number is Red(Black) → Change text colour to red(black).
         Random rand = new Random();
         int hit = rand.nextInt(36);
-        lblhit.setText(""+ hit +"");
+        
+        if (Arrays.asList(Red).contains(hit))
+        {
+            lblhit.setForeground(Color.red);
+            lblhit.setText(""+ hit +"");
+        }
+        
+        else
+        {
+            lblhit.setText(""+ hit +"");
+        }
+        
         
         //money that you get by win of Straight
         if (hit == numA)
