@@ -507,20 +507,22 @@ public class FrmR extends javax.swing.JFrame {
         //money that user get from Odd/Even.
         // ↓That's user get money by hitting to Even
         if(Arrays.asList(listEven).contains(hit)) {
-            if (numR == "Odd")
+            if (numQ == "Odd")
             {
                 lblYmoney.setText(""+ money +"");
             }
             
-            if (numR == "Even")
+            if (numQ == "Even")
             {
                 money = money + even + (even * 2);
                 lblYmoney.setText(""+ money +"");
             }
         }
+
+
         
         // ↓That's user get money by hitting to Odd
-        if (Arrays.asList(listOdd).contains(hit))
+        else if (Arrays.asList(listOdd).contains(hit))
         {
             if (numQ == "Odd")
             {
@@ -528,7 +530,7 @@ public class FrmR extends javax.swing.JFrame {
                 lblYmoney.setText(""+ money +"");
             }
             
-            if (numR == "Even")
+            if (numQ == "Even")
             {
                 lblYmoney.setText(""+ money +"");
             }
