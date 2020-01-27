@@ -538,7 +538,10 @@ public class FrmR extends javax.swing.JFrame {
         
         
         //When user's money become less or equal to 0, user just can press Restart button.
-        
+        if (money < 1)
+        {
+            btnStart.setEnabled(false);
+        }
         
         
         
@@ -547,7 +550,7 @@ public class FrmR extends javax.swing.JFrame {
     }//GEN-LAST:event_btnStartActionPerformed
 
     private void btnRestartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestartActionPerformed
-        // TODO add your handling code here:
+        lblYmoney.setText("10000");
     }//GEN-LAST:event_btnRestartActionPerformed
 
     /**
