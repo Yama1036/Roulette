@@ -326,21 +326,48 @@ public class FrmR extends javax.swing.JFrame {
         money = money - straight - street - low - red - even;
         
         //Create the Arraylist of Odd and Even numbers.
-        Integer[] numArray = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36};
         List listOdd = new ArrayList();
-        List listEven = new ArrayList();
+        listOdd.add(1);
+        listOdd.add(3);
+        listOdd.add(5);
+        listOdd.add(7);
+        listOdd.add(9);
+        listOdd.add(11);
+        listOdd.add(13);
+        listOdd.add(15);
+        listOdd.add(17);
+        listOdd.add(19);
+        listOdd.add(21);
+        listOdd.add(23);
+        listOdd.add(25);
+        listOdd.add(27);
+        listOdd.add(29);
+        listOdd.add(31);
+        listOdd.add(33);
+        listOdd.add(35);
         
-        for (int num : numArray)
-        {
-            if (num % 2 == 0)
-            {
-                listEven.add(num);
-            }
-            else
-            {
-                listOdd.add(num);
-            }
-        }
+        
+        List listEven = new ArrayList();
+        listEven.add(0);
+        listEven.add(2);
+        listEven.add(4);
+        listEven.add(6);
+        listEven.add(8);
+        listEven.add(10);
+        listEven.add(12);
+        listEven.add(14);
+        listEven.add(16);
+        listEven.add(18);
+        listEven.add(20);
+        listEven.add(22);
+        listEven.add(24);
+        listEven.add(26);
+        listEven.add(28);
+        listEven.add(30);
+        listEven.add(32);
+        listEven.add(34);
+        listEven.add(36);
+
         
         
         //Create the Arraylist of Red numbers.
@@ -416,30 +443,20 @@ public class FrmR extends javax.swing.JFrame {
         //find out the what number is hit, if number is Red(Black) → Change text colour to red(black).
         Random rand = new Random();
         int hit = rand.nextInt(36);
-        
-        if (Arrays.asList(Red).contains(hit))
-        {
-            lblhit.setForeground(Color.red);
-            lblhit.setText(""+ hit +"");
-        }
-        
-        else
-        {
-            lblhit.setText(""+ hit +"");
-        }
-        
+        lblhit.setText(""+ hit +"");
+
         
         //money that you get by win of Straight
         if (hit == numA)
         {
-            money = money + (straight * 36);
+            money = money + straight + (straight * 36);
             lblYmoney.setText(""+ money +"");
         }
         
         //money that you get from win of Street
         if (hit == num1)
         {
-            money = money + (street * 18);
+            money = money + street + (street * 18);
             lblYmoney.setText(""+ money +"");
         }
         
@@ -451,7 +468,7 @@ public class FrmR extends javax.swing.JFrame {
         
         if (hit == num3)
         {
-            money = money + (street * 18);
+            money = money + street + (street * 18);
             lblYmoney.setText(""+ money +"");
         }
         
@@ -461,7 +478,7 @@ public class FrmR extends javax.swing.JFrame {
         {
             if (numL == "High")
             {
-                money = money + (low * 2);
+                money = money + low + (low * 2);
                 lblYmoney.setText(""+ money +"");
             }
             
@@ -481,7 +498,7 @@ public class FrmR extends javax.swing.JFrame {
             
             if (numL == "Low")
             {
-                money = money + (low * 2);
+                money = money + low + (low * 2);
                 lblYmoney.setText(""+ money +"");
             }
         }
@@ -497,7 +514,7 @@ public class FrmR extends javax.swing.JFrame {
             
             if (numR == "Even")
             {
-                money = money + (even * 2);
+                money = money + even + (even * 2);
                 lblYmoney.setText(""+ money +"");
             }
         }
@@ -507,7 +524,7 @@ public class FrmR extends javax.swing.JFrame {
         {
             if (numQ == "Odd")
             {
-                money = money + (even * 2);
+                money = money + even + (even * 2);
                 lblYmoney.setText(""+ money +"");
             }
             
@@ -523,7 +540,7 @@ public class FrmR extends javax.swing.JFrame {
         {
             if (numR == "Red")
             {
-                money = money + (red * 2);
+                money = money + red + (red * 2);
                 lblYmoney.setText(""+ money +"");          
             }
             
@@ -543,7 +560,7 @@ public class FrmR extends javax.swing.JFrame {
             
             if (numR == "Black")
             {
-                money = money + (red * 2);
+                money = money + red + (red * 2);
                 lblYmoney.setText(""+ money +"");
             }    
         }
@@ -563,6 +580,7 @@ public class FrmR extends javax.swing.JFrame {
 
     private void btnRestartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestartActionPerformed
         lblYmoney.setText("10000");
+        btnStart.setEnabled(true);
     }//GEN-LAST:event_btnRestartActionPerformed
 
     /**
