@@ -305,7 +305,8 @@ public class FrmR extends javax.swing.JFrame {
         Object numr = cmbRed.getSelectedItem();
         String numR = numr.toString();
         
-        int numO = cmbEven.getSelectedIndex();
+        Object numq = cmbEven.getSelectedItem();
+        String numQ = numq.toString();
 
         
         //get how much does user bet in each spot and amount of money.
@@ -323,7 +324,7 @@ public class FrmR extends javax.swing.JFrame {
         
         money = money - straight - street - low - red - even;
         
-        //Create the Array of Red and Black numbers.(Red = Odd . Black = Even) 
+        //Create the Arraylist of Odd and Even numbers.
         Integer[] numArray = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36};
         List listOdd = new ArrayList();
         List listEven = new ArrayList();
@@ -339,6 +340,49 @@ public class FrmR extends javax.swing.JFrame {
                 listOdd.add(num);
             }
         }
+        
+        
+        //Create the Arraylist of Red numbers.
+        ArrayList Red = new ArrayList (17); 
+        Red.add(1);
+        Red.add(3);
+        Red.add(5);
+        Red.add(7);
+        Red.add(9);
+        Red.add(12);
+        Red.add(14);
+        Red.add(16);
+        Red.add(18);
+        Red.add(19);
+        Red.add(21);
+        Red.add(23);
+        Red.add(25);
+        Red.add(27);
+        Red.add(30);
+        Red.add(32);
+        Red.add(34);
+        Red.add(36);
+        
+        //Create the Arraylist of Black numbers.
+        ArrayList Black = new ArrayList(17);
+        Black.add(2);
+        Black.add(4);
+        Black.add(6);
+        Black.add(8);
+        Black.add(10);
+        Black.add(11);
+        Black.add(13);
+        Black.add(15);
+        Black.add(17);
+        Black.add(20);
+        Black.add(22);
+        Black.add(24);
+        Black.add(26);
+        Black.add(28);
+        Black.add(29);
+        Black.add(31);
+        Black.add(33);
+        Black.add(35);
         
         
         
@@ -431,38 +475,39 @@ public class FrmR extends javax.swing.JFrame {
         }
         
         
-        //money that user get from Red/Black
-        // ↓That's user get money by hitting to Black(Even#)
+        //money that user get from Odd/Even.
+        // ↓That's user get money by hitting to Even
         if(Arrays.asList(listEven).contains(hit)) {
-            if (numR == "Red")
+            if (numR == "Odd")
             {
                 lblYmoney.setText(""+ money +"");
             }
             
-            if (numR == "Black")
+            if (numR == "Even")
             {
                 money = money + (red * 2);
                 lblYmoney.setText(""+ money +"");
             }
         }
         
-        // ↓That's user get money by hitting to Red(Odd#)
+        // ↓That's user get money by hitting to Odd
         if (Arrays.asList(listOdd).contains(hit))
         {
-            if (numR == "Red")
+            if (numQ == "Odd")
             {
                 money = money + (red * 2);
                 lblYmoney.setText(""+ money +"");
             }
             
-            if (numR == "Black")
+            if (numR == "Even")
             {
                 lblYmoney.setText(""+ money +"");
             }
         }
         
-        
-        if (hit == listEven)
+        //Money that's user get from Red/Black.
+        //
+        if (hit == )
         {
             
         }
