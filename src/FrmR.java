@@ -41,9 +41,7 @@ public class FrmR extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         lblhit = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         lblYmoney = new javax.swing.JLabel();
-        lblDmoney = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         cmbStraight = new javax.swing.JComboBox();
@@ -79,12 +77,8 @@ public class FrmR extends javax.swing.JFrame {
 
         jLabel5.setText("Your money :");
 
-        jLabel6.setText("Dealer :");
-
         lblYmoney.setForeground(java.awt.Color.blue);
         lblYmoney.setText("10000");
-
-        lblDmoney.setText("10000");
 
         jLabel1.setText("Inside Bet");
 
@@ -172,10 +166,8 @@ public class FrmR extends javax.swing.JFrame {
                                             .addComponent(jLabel8)
                                             .addComponent(jLabel4))
                                         .addGap(18, 18, 18)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(cmbLow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                                 .addComponent(jLabel11)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(txtLow, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -194,13 +186,9 @@ public class FrmR extends javax.swing.JFrame {
                                                     .addComponent(txtStraight, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
                                                     .addComponent(txtStreet)))))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel5))
+                                .addComponent(jLabel5)
                                 .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblYmoney)
-                                    .addComponent(lblDmoney)))
+                                .addComponent(lblYmoney))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
                                 .addComponent(btnStart, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -208,6 +196,9 @@ public class FrmR extends javax.swing.JFrame {
                                 .addComponent(btnRestart, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(156, 156, 156)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(cmbLow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -255,10 +246,7 @@ public class FrmR extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(lblYmoney))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(lblDmoney)
-                    .addComponent(jLabel10))
+                .addComponent(jLabel10)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmbLow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -277,7 +265,7 @@ public class FrmR extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel13)
                                 .addComponent(txtEven, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(26, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -444,13 +432,33 @@ public class FrmR extends javax.swing.JFrame {
         
         
         //money that user get from Red/Black
-         if(Arrays.asList(listEven).contains(hit)) {
+        // ↓That's user get money by hitting to Black(Even#)
+        if(Arrays.asList(listEven).contains(hit)) {
             if (numR == "Red")
             {
-                
+                lblYmoney.setText(""+ money +"");
             }
             
+            if (numR == "Black")
+            {
+                money = money + (red * 2);
+                lblYmoney.setText(""+ money +"");
+            }
+        }
+        
+        // ↓That's user get money by hitting to Red(Odd#)
+        if (Arrays.asList(listOdd).contains(hit))
+        {
+            if (numR == "Red")
+            {
+                money = money + (red * 2);
+                lblYmoney.setText(""+ money +"");
+            }
             
+            if (numR == "Black")
+            {
+                lblYmoney.setText(""+ money +"");
+            }
         }
         
         
@@ -525,12 +533,10 @@ public class FrmR extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblDmoney;
     private javax.swing.JLabel lblYmoney;
     private javax.swing.JLabel lblhit;
     private javax.swing.JTextField txtEven;
