@@ -124,14 +124,14 @@ public class FrmR extends javax.swing.JFrame {
         txtEven.setText("0");
 
         btnStart.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
-        btnStart.setText("Start!!");
+        btnStart.setText("Spin the wheel");
         btnStart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnStartActionPerformed(evt);
             }
         });
 
-        btnRestart.setText("Play again");
+        btnRestart.setText("Restart");
         btnRestart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRestartActionPerformed(evt);
@@ -190,8 +190,8 @@ public class FrmR extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(lblYmoney))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addComponent(btnStart, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(21, 21, 21)
+                                .addComponent(btnStart)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnRestart, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(156, 156, 156)
@@ -343,7 +343,7 @@ public class FrmR extends javax.swing.JFrame {
         
         
         //Create the Arraylist of Red numbers.
-        ArrayList Red = new ArrayList (17); 
+        List Red = new ArrayList (17); 
         Red.add(1);
         Red.add(3);
         Red.add(5);
@@ -364,7 +364,7 @@ public class FrmR extends javax.swing.JFrame {
         Red.add(36);
         
         //Create the Arraylist of Black numbers.
-        ArrayList Black = new ArrayList(17);
+        List Black = new ArrayList(17);
         Black.add(2);
         Black.add(4);
         Black.add(6);
@@ -485,7 +485,7 @@ public class FrmR extends javax.swing.JFrame {
             
             if (numR == "Even")
             {
-                money = money + (red * 2);
+                money = money + (even * 2);
                 lblYmoney.setText(""+ money +"");
             }
         }
@@ -495,7 +495,7 @@ public class FrmR extends javax.swing.JFrame {
         {
             if (numQ == "Odd")
             {
-                money = money + (red * 2);
+                money = money + (even * 2);
                 lblYmoney.setText(""+ money +"");
             }
             
@@ -506,14 +506,38 @@ public class FrmR extends javax.swing.JFrame {
         }
         
         //Money that's user get from Red/Black.
-        //
-        if (hit == )
+        //↓That's user get money by hitting to Red
+        if (Arrays.asList(Red).contains(hit))
         {
+            if (numR == "Red")
+            {
+                money = money + (red * 2);
+                lblYmoney.setText(""+ money +"");          
+            }
             
+            if (numR == "Black")
+            {
+                lblYmoney.setText(""+ money +"");        
+            }
         }
-       
+        
+        //↓That's user get money by hitting to Black
+        if (Arrays.asList(Black).contains(hit))
+        {
+            if (numR == "Red")
+            {
+                lblYmoney.setText(""+ money +"");
+            }
+            
+            if (numR == "Black")
+            {
+                money = money + (red * 2);
+                lblYmoney.setText(""+ money +"");
+            }    
+        }
         
         
+        //When user's money become less or equal to 0, user just can press Restart button.
         
         
         

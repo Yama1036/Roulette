@@ -101,8 +101,8 @@
                                   <Component id="lblYmoney" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                  <Component id="btnStart" min="-2" pref="184" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                  <Component id="btnStart" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="btnRestart" min="-2" pref="111" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
@@ -426,7 +426,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="24" style="2"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Start!!"/>
+            <Property name="text" type="java.lang.String" value="Spin the wheel"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnStartActionPerformed"/>
@@ -434,7 +434,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnRestart">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Play again"/>
+            <Property name="text" type="java.lang.String" value="Restart"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRestartActionPerformed"/>
