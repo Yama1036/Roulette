@@ -249,10 +249,11 @@ public class FrmR extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel10)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbLow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11)
-                    .addComponent(txtLow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cmbLow, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel11)
+                        .addComponent(txtLow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -506,22 +507,56 @@ public class FrmR extends javax.swing.JFrame {
         
         //money that user get from Odd/Even.
         // ↓That's user get money by hitting to Even
-        if(Arrays.asList(listEven).contains(hit)) {
-            if (numQ == "Odd")
-            {
-                lblYmoney.setText(""+ money +"");
-            }
-            
+        Boolean E = Arrays.asList(listEven).contains(hit);
+        
+        if (E == true)
+        {
             if (numQ == "Even")
             {
                 money = money + even + (even * 2);
                 lblYmoney.setText(""+ money +"");
             }
-        }
-
-
+            
+            if (numQ == "Odd")
+            {
+                lblYmoney.setText(""+ money +"");
+            }
+        }    
         
+        if (E == false)
+        {
+            lblYmoney.setText(""+ money +"");
+        }
+        
+       
         // ↓That's user get money by hitting to Odd
+        Boolean O = Arrays.asList(listOdd).contains(hit);
+        
+        if (O == true)
+        {
+            if (numQ == "Odd")
+            {
+                money = money + even + (even * 2);
+                lblYmoney.setText(""+ money +"");
+            }
+            
+            if (numQ == "Even")
+            {
+                lblYmoney.setText(""+ money +"");
+            }
+        }
+        
+        if (O == false)
+        {
+            lblYmoney.setText(""+ money +"");
+        }
+        
+        
+        
+        
+        
+        
+        
         else if (Arrays.asList(listOdd).contains(hit))
         {
             if (numQ == "Odd")
