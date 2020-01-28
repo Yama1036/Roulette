@@ -11,6 +11,7 @@ In this Project, I use French Style (no 00) from 0 to 36.
 You get to choose which spot you are going to bet in each combo box. Ex) single number, various groupings of numbers, the colors red or black, whether the number is odd or even.
 
 Decide how much you want to bet on each spot from the text box on the right side of each. Note) You don't have to bet on each spot. If you don't want to bet, set the text box "0" You can check the amount of money you have on the left side, above the "Spin the wheel" button with Blue colour.
+Note) Do not enter numbers with a decimal point. Enter a number that is zero or greater than zero.
 
 Once you decide the spot and amount of money you want bet, you click the "Spin the wheel" button. Hit number shows by Red colour above the amount of your money. It calculates and gives you the win/lost money and automatically shows on the left side, above the "Spin the wheel" button with Blue colour.
 
