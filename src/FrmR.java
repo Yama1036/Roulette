@@ -507,9 +507,7 @@ public class FrmR extends javax.swing.JFrame {
         
         //money that user get from Odd/Even.
         // ↓That's user get money by hitting to Even
-        
-        Integer A = hit;
-        Boolean E = listEven.contains(A);
+        Boolean E = listEven.contains(hit);
         
         if (E == true)
         {
@@ -532,7 +530,7 @@ public class FrmR extends javax.swing.JFrame {
         
        
         // ↓That's user get money by hitting to Odd
-        Boolean O = listOdd.contains(A);
+        Boolean O = listOdd.contains(hit);
         
         if (O == true)
         {
@@ -563,7 +561,9 @@ public class FrmR extends javax.swing.JFrame {
         
         //Money that's user get from Red/Black.
         //↓That's user get money by hitting to Red
-        if (Arrays.asList(Red).contains(hit))
+        Boolean R = Red.contains(hit);
+        
+        if (R == true)
         {
             if (numR == "Red")
             {
@@ -577,8 +577,16 @@ public class FrmR extends javax.swing.JFrame {
             }
         }
         
+        if (R == false)
+        {
+            lblYmoney.setText(""+ money +"");       
+        }
+        
+        
         //↓That's user get money by hitting to Black
-        if (Arrays.asList(Black).contains(hit))
+        Boolean B = Black.contains(hit);
+        
+        if (B == true)
         {
             if (numR == "Red")
             {
@@ -590,6 +598,11 @@ public class FrmR extends javax.swing.JFrame {
                 money = money + red + (red * 2);
                 lblYmoney.setText(""+ money +"");
             }    
+        }
+        
+        if (B == false)
+        {
+            lblYmoney.setText(""+ money +"");
         }
         
         
