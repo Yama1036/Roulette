@@ -327,7 +327,7 @@ public class FrmR extends javax.swing.JFrame {
         money = money - straight - street - low - red - even;
         
         //Create the Arraylist of Odd and Even numbers.
-        List listOdd = new ArrayList();
+        ArrayList <Integer> listOdd = new ArrayList();
         listOdd.add(1);
         listOdd.add(3);
         listOdd.add(5);
@@ -348,7 +348,7 @@ public class FrmR extends javax.swing.JFrame {
         listOdd.add(35);
         
         
-        List listEven = new ArrayList();
+        ArrayList <Integer> listEven = new ArrayList();
         listEven.add(0);
         listEven.add(2);
         listEven.add(4);
@@ -372,7 +372,7 @@ public class FrmR extends javax.swing.JFrame {
         
         
         //Create the Arraylist of Red numbers.
-        List Red = new ArrayList (17); 
+        List <Integer> Red = new ArrayList (17); 
         Red.add(1);
         Red.add(3);
         Red.add(5);
@@ -393,7 +393,7 @@ public class FrmR extends javax.swing.JFrame {
         Red.add(36);
         
         //Create the Arraylist of Black numbers.
-        List Black = new ArrayList(17);
+        List <Integer> Black = new ArrayList(17);
         Black.add(2);
         Black.add(4);
         Black.add(6);
@@ -507,7 +507,9 @@ public class FrmR extends javax.swing.JFrame {
         
         //money that user get from Odd/Even.
         // ↓That's user get money by hitting to Even
-        Boolean E = Arrays.asList(listEven).contains(hit);
+        
+        Integer A = hit;
+        Boolean E = listEven.contains(A);
         
         if (E == true)
         {
@@ -530,7 +532,7 @@ public class FrmR extends javax.swing.JFrame {
         
        
         // ↓That's user get money by hitting to Odd
-        Boolean O = Arrays.asList(listOdd).contains(hit);
+        Boolean O = listOdd.contains(A);
         
         if (O == true)
         {
@@ -557,19 +559,7 @@ public class FrmR extends javax.swing.JFrame {
         
         
         
-        else if (Arrays.asList(listOdd).contains(hit))
-        {
-            if (numQ == "Odd")
-            {
-                money = money + even + (even * 2);
-                lblYmoney.setText(""+ money +"");
-            }
-            
-            if (numQ == "Even")
-            {
-                lblYmoney.setText(""+ money +"");
-            }
-        }
+        
         
         //Money that's user get from Red/Black.
         //↓That's user get money by hitting to Red
