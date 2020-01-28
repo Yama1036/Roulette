@@ -36,3 +36,7 @@ Good luck and become a Millionaire!!
 ・Odd - 1, 3, 5, ..., 35 Payout: bet * 2
 
 ・Even - 2, 4, 6, ..., 36 Payout: bet * 2
+
+
+
+NOTE : 16 comes a lot!!
