@@ -449,6 +449,29 @@ public class FrmR extends javax.swing.JFrame {
         lblhit.setText(""+ hit +"");
 
         
+        //Place those Random hit numbers to file. Player can go and se those.
+        File dataFile = new File("Hit numbers.dat");
+        FileWriter out;
+        BufferedWriter writeFile;
+        Scanner input = new Scanner(System.in);
+        int score;
+
+        try {
+            out = new FileWriter(dataFile, true);
+            writeFile = new BufferedWriter(out);
+            for (int i = 0; i < 1; i++) {
+                score = hit;
+                writeFile.write(String.valueOf(score));
+                writeFile.newLine();
+            }
+            writeFile.close();
+            out.close();
+        } catch (IOException e) {
+         
+    }
+        
+        
+        
         //money that you get by win of Straight
         if (hit == numA)
         {
